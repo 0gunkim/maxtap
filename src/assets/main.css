@@ -5,3 +5,15 @@
 body {
   background-color: white;
 }
+a {
+  @apply decoration-neutral-600 text-neutral-500;
+}
+
+a:hover,
+a:active {
+  @apply text-neutral-700;
+}
+
+h3 {
+  @apply text-xl my-3;
+}

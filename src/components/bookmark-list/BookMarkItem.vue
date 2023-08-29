@@ -21,4 +21,19 @@ interface BookMarkProps {
 }
 defineProps<BookMarkProps>()
 </script>
-<style scoped></style>
+<style scoped>
+li {
+  @apply m-auto max-w-2xl 
+  /* max-width: 40rem; */;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+p {
+  margin: 0.5rem 0;
+}
+</style>
