@@ -31,17 +31,31 @@ const tabs: TabComponents = {
   BookmarkStore,
   AddBookmark
 }
-
+//computed
 const currentTabComponent = computed(() => tabs[tabType.value])
 
+//method
 const setTapTypeHandle = (tab: TabKey) => {
   tabType.value = tab
 }
+const addBookmarkHandle = (title: string, description: string, link: string) => {
+  const addBookmark = {
+    id: new Date().toISOString(),
+    title: title,
+    description,
+    link
+  }
+  bookmarks.value.unshift(addBookmark)
+}
+
+//mock
 const bookmarks = ref([
   { id: '1', title: 'vue 공식문서', description: 'Max tap Vue.js', link: 'https://vue.js.org' },
   { id: '2', title: 'google 공식문서', description: ' google story', link: 'https://google.org' }
 ])
-provide('bookmarks', bookmarks)
+
+//provide
+provide('bookmarks', { bookmarks, addBookmarkHandle })
 </script>
 
 <style scoped>

@@ -15,15 +15,21 @@
 <script setup lang="ts">
 import { inject, type Ref } from 'vue'
 import BookMarkItem from './BookMarkItem.vue'
+
 interface IBookmark {
   id: string
   title: string
   description: string
   link: string
 }
+interface BookmarkContext {
+  bookmarks: IBookmark[]
+  addBookmarkHandle: (title: string, description: string, link: string) => void
+}
 
 // defineProps<{ bookmarks: IBookmark[] }>()
-const bookmarks: Ref = inject('bookmarks')!
+const bookmarkList = inject<BookmarkContext>('bookmarks')!
+const { bookmarks } = bookmarkList
 </script>
 
 <style scoped></style>
