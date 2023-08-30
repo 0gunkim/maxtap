@@ -13,6 +13,7 @@
   </BaseContainer>
 </template>
 <script setup lang="ts">
+import { inject, type Ref } from 'vue'
 import BookMarkItem from './BookMarkItem.vue'
 interface IBookmark {
   id: string
@@ -21,7 +22,8 @@ interface IBookmark {
   link: string
 }
 
-defineProps<{ bookmarks: IBookmark[] }>()
+// defineProps<{ bookmarks: IBookmark[] }>()
+const bookmarks: Ref = inject('bookmarks')!
 </script>
 
 <style scoped></style>
