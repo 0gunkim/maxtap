@@ -8,5 +8,6 @@ div {
   padding: 1rem;
   margin: 2rem auto;
   max-width: 32rem;
+  min-width: 15rem;
 }
 </style>

@@ -27,4 +27,7 @@ defineProps<IBaseButtonType>()
 .square {
   @apply shadow-gray-500 shadow-sm p-4 rounded-sm ease-in duration-700;
 }
+.square:focus {
+  @apply bg-gray-500;
+}
 </style>
