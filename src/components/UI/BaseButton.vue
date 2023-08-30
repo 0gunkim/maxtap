@@ -4,7 +4,7 @@
 <!-- 프로퍼티 말고 slot을 사용하는 이유: 유연성 -->
 <script lang="ts" setup>
 type TButtonType = 'button' | 'submit' | 'reset' | undefined
-type TClassType = 'flat' | 'dot'
+type TClassType = 'flat' | 'square'
 interface IBaseButtonType {
   type: TButtonType
   mode: TClassType
@@ -23,5 +23,8 @@ defineProps<IBaseButtonType>()
 }
 .flat:hover::before {
   content: 'really?  ';
+}
+.square {
+  @apply shadow-gray-500 shadow-sm p-4 rounded-sm ease-in duration-700;
 }
 </style>

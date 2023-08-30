@@ -1,8 +1,14 @@
 <template>
   <div class="l_the_book_mark">
     <BaseCard>
-      <BaseButton @click="setTapTypeHandle('BookmarkStore')">Bookmark List</BaseButton>
-      <BaseButton @click="setTapTypeHandle('AddBookmark')">Add Bookmark</BaseButton>
+      <div class="article">
+        <BaseButton @click="setTapTypeHandle('BookmarkStore')" :mode="'square'"
+          >Bookmark List</BaseButton
+        >
+        <BaseButton @click="setTapTypeHandle('AddBookmark')" :mode="'square'"
+          >Add Bookmark</BaseButton
+        >
+      </div>
     </BaseCard>
     <component :is="currentTabComponent"></component>
   </div>
@@ -26,7 +32,7 @@ const tabs: TabComponents = {
   AddBookmark
 }
 
-const currentTabComponent = computed(() => tabs[tabType.value as TabKey])
+const currentTabComponent = computed(() => tabs[tabType.value])
 
 const setTapTypeHandle = (tab: TabKey) => {
   tabType.value = tab
@@ -40,6 +46,9 @@ provide('bookmarks', bookmarks)
 
 <style scoped>
 .l_the_book_mark {
-  @apply p-2;
+  @apply p-4;
+}
+.article {
+  @apply flex gap-6 justify-center text-gray-600;
 }
 </style>
