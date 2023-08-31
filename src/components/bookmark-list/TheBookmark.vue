@@ -48,15 +48,25 @@ const addBookmarkHandle = (title: string, description: string, link: string) => 
   bookmarks.value.unshift(addBookmark)
   tabType.value = 'BookmarkStore'
 }
-
+interface Bookmark {
+  id: string
+  title: string
+  description: string
+  link: string
+}
 //mock
-const bookmarks = ref([
+const bookmarks = ref<Bookmark[]>([
   { id: '1', title: 'vue 공식문서', description: 'Max tap Vue.js', link: 'https://vue.js.org' },
   { id: '2', title: 'google 공식문서', description: ' google story', link: 'https://google.org' }
 ])
+const deleteBookmarkHandle = (markId: string) => {
+  const resIndex = bookmarks.value.findIndex((res) => res.id === markId)
+  bookmarks.value.splice(resIndex, 1)
+  console.log(bookmarks.value.length)
+}
 
 //provide
-provide('bookmarks', { bookmarks, addBookmarkHandle })
+provide('bookmarks', { bookmarks, addBookmarkHandle, deleteBookmarkHandle })
 </script>
 
 <style scoped>

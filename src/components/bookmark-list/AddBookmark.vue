@@ -12,17 +12,30 @@
     <form @submit.prevent="submitHandle">
       <div class="form-control">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" ref="enterTitle" />
+        <input type="text" name="title" id="title" placeholder="사이트 이름" ref="enterTitle" />
       </div>
       <div class="form-control">
         <label for="description">Description</label>
-        <textarea type="text" name="description" id="description" rows="3" ref="enterDescription" />
+        <textarea
+          type="text"
+          name="description"
+          id="description"
+          placeholder="간단한 설명 넣기 (3줄까지만 가능해요)"
+          rows="3"
+          ref="enterDescription"
+        />
       </div>
       <div class="form-control">
-        <label for="link">Link</label>
-        <input type="link" name="link" id="link" ref="enterLink" />
+        <label for="link">URL</label>
+        <input
+          type="link"
+          name="link"
+          id="link"
+          placeholder="ex) http://google.com"
+          ref="enterLink"
+        />
       </div>
-      <div>
+      <div class="font-bold">
         <BaseButton :mode="'square'">북마크 추가하기</BaseButton>
       </div>
     </form>
@@ -59,10 +72,14 @@ const confirmHandle = () => {
 </script>
 <style scoped>
 form {
-  @apply flex flex-col justify-center items-center mx-auto;
+  @apply flex flex-col justify-center items-center mx-auto gap-10;
 }
 .from-control,
 label {
   @apply block flex-col justify-center;
+}
+input,
+textarea {
+  @apply w-96;
 }
 </style>
