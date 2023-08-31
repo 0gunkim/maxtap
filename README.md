@@ -1,7 +1,11 @@
 # Bookmark Tab
 - Save Bookmarks
-- vuejs composition api, typescript, tailwindcss study
+  
+    https://maxtap.vercel.app/
 
+- vuejs composition api, typescript, tailwindcss, vite
+  
+  
 ## Setup
 ```
 git clone https://github.com/0gunkim/maxtap.git
@@ -15,6 +19,5 @@ npm run dev
 ```
 
 ## Demo
-
-![ezgif com-video-to-gif](https://github.com/0gunkim/maxtap/assets/116594422/9c2f69e2-bb13-4a99-84bb-7eb8b508ef1b)
+![ezgif com-video-to-gif](https://github.com/0gunkim/maxtap/assets/116594422/f732f818-72e3-4d71-96e4-c32f01bdf854)
 
