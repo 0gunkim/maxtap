@@ -1,4 +1,13 @@
 <template>
+  <BaseDialog v-if="inputIsInvalid" title="Invaild Input" @close="confirmHandle">
+    <template #default>
+      <p>입력이 비어 있습니다.</p>
+      <p>입력칸이 비어있으면 저장이 안됩니다.</p>
+    </template>
+    <template #actions>
+      <BaseButton @click="confirmHandle"> 확인 </BaseButton>
+    </template>
+  </BaseDialog>
   <BaseContainer>
     <form @submit.prevent="submitHandle">
       <div class="form-control">
@@ -28,16 +37,24 @@ interface addBookmarkType {
 const enterTitle: Ref<HTMLInputElement | null> = ref(null)
 const enterDescription: Ref<HTMLInputElement | null> = ref(null)
 const enterLink: Ref<HTMLInputElement | null> = ref(null)
+const inputIsInvalid = ref(false)
 const emitBookmark = inject<addBookmarkType>('bookmarks')
 
 const submitHandle = () => {
   const title = enterTitle.value ? enterTitle.value.value : ''
   const description = enterDescription.value ? enterDescription.value.value : ''
   const link = enterLink.value ? enterLink.value.value : ''
-  if (emitBookmark) {
+  if (title.trim() === '' || description.trim() === '' || link.trim() === '') {
+    inputIsInvalid.value = true
+    return
+  } else if (emitBookmark) {
     const { addBookmarkHandle } = emitBookmark
     addBookmarkHandle(title, description, link)
   }
+}
+
+const confirmHandle = () => {
+  inputIsInvalid.value = false
 }
 </script>
 <style scoped>

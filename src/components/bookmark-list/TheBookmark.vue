@@ -46,6 +46,7 @@ const addBookmarkHandle = (title: string, description: string, link: string) => 
     link
   }
   bookmarks.value.unshift(addBookmark)
+  tabType.value = 'BookmarkStore'
 }
 
 //mock

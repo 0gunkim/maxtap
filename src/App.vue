@@ -3,7 +3,6 @@
   <TheBookmark />
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue'
 import TheHeader from './components/layout/TheHeader.vue'
 import TheBookmark from './components/bookmark-list/TheBookmark.vue'
 </script>

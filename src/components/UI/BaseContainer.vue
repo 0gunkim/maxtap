@@ -7,6 +7,6 @@
 }
 .container::before {
   content: ' ';
-  @apply absolute inset-0 min-w-[300px] bg-gray-900 opacity-50  rounded-xl shadow-lg -z-10;
+  @apply absolute inset-0 min-w-[300px] bg-gray-900 opacity-40  rounded-xl shadow-lg -z-10;
 }
 </style>
