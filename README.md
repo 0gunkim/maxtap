@@ -1,11 +1,13 @@
 # Bookmark Tab
+
+23.08.29~31
+
 - Save Bookmarks
   
     https://maxtap.vercel.app/
 
 - vuejs composition api, typescript, tailwindcss, vite
-  
-  
+    
 ## Setup
 ```
 git clone https://github.com/0gunkim/maxtap.git
